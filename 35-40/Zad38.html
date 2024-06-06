@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 38 - Kacper Kabziński</title>
+    <style>
+        body {
+            background-color: silver;
+            text-align: center;
+        }
+        #info {
+            color: red;
+            font-size: 50px;
+        }
+        .menu {
+            font-size: 50px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <p style="font-size: 43px; color: green;"><br>Moje imię i nazwisko to: Kacper Kabziński<br></p>
+        <p style="font-size: 43px; color: green;"><br>Liczba1: 6<br></p>
+        <p style="font-size: 43px; color: green;"><br>Liczba2: 6 + 7 = 13<br></p>
+        <p style="font-size: 43px; color: green;"><br>Liczba3: 12<br></p>
+        <p style="font-size: 43px; color: green;"><br>Liczba4: 12 + 4 = 16<br></p>
+    </div>
+
+    <hr>
+
+    <div class="menu">
+        <p><br>------MENU------<br></p>
+        <p><br><button onclick="opcja6()">6 - Wyświetlanie teorii o operatorach</button></p>
+        <p><br><button onclick="opcja28()">28 - Sprawdź czy liczba należy do przedziału (od 6 do 13]</button></p>
+        <p><br><button onclick="opcja64()">64 - Sprawdź czy liczba należy do przedziału (-∞ ; 12) lub [16 ; +∞)</button></p>
+    </div>
+
+    <script>
+        function opcja6() {
+            document.getElementById("info").innerHTML = "<font color='green' size='7'>Jesteś w opcji 6 --> teoria</font><br>" +
+                                                          "<font color='green' size='7'>&& i x=3 y=4 (x<9 && y>2) wynik --> Prawda</font><br>" +
+                                                          "<font color='green' size='7'>|| lub x=3 y=4 (x==8 || y==6) wynik --> Fałsz</font><br>" +
+                                                          "<font color='green' size='7'>! zaprzeczenie x=3 y=4 !(x==y) wynik --> Prawda</font><br>";
+        }
+
+        function opcja28() {
+            var liczba = prompt("Podaj liczbę do sprawdzenia:");
+            if (liczba > 6 && liczba <= 13) {
+                document.getElementById("info").innerHTML = "<font color='green' size='7'>Liczba " + liczba + " należy do przedziału (od 6 do 13]</font><br>";
+            } else {
+                document.getElementById("info").innerHTML = "<font color='green' size='7'>Liczba " + liczba + " nie należy do przedziału (od 6 do 13]</font><br>";
+            }
+        }
+
+        function opcja64() {
+            var liczba = prompt("Podaj liczbę do sprawdzenia:");
+            if ((liczba < 12) || (liczba >= 16)) {
+                document.getElementById("info").innerHTML = "<font color='green' size='7'>Liczba " + liczba + " należy do przedziału (-∞ ; 12) lub [16 ; +∞)</font><br>";
+            } else {
+                document.getElementById("info").innerHTML = "<font color='green' size='7'>Liczba " + liczba + " nie należy do przedziału (-∞ ; 12) lub [16 ; +∞)</font><br>";
+            }
+        }
+    </script>
+
+    <input type="button" style="height: 80px; width: 300px; background: red;" value="Kliknij by podać opcję" onclick="fun_Kabzinski()" />
+
+</body>
+</html>
